@@ -1,0 +1,345 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical" >
+
+    <include layout="@layout/fragment_header" />
+
+    <com.accessories.city.view.ReboundScrollView
+        android:id="@+id/scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white_bg_home"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+
+            <RelativeLayout
+                android:id="@+id/balance_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_click"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:padding="@dimen/app_text_size_min" >
+                <TextView
+                        android:id="@+id/selleName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/pc_txt_size"
+                       />
+                <ImageView android:id="@+id/img"
+                            android:layout_width="match_parent"
+                           android:layout_height="160dp"
+                           android:background="@drawable/rr"
+                           android:scaleType="fitXY"
+                           android:layout_marginTop="5dp"
+                        android:layout_below="@+id/selleName"/>
+
+
+            </RelativeLayout>
+
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:background="@color/color_small_gray"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="主营"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/pc_txt_size"
+                    android:padding="@dimen/app_text_size_min"
+                    />
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:background="@color/color_small_gray"
+            />
+
+            <RelativeLayout
+                android:id="@+id/recharge_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_click"
+                android:visibility="gone"
+                android:padding="@dimen/app_text_size_min" >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:text="@string/recharge"
+                    android:textColor="@color/color_small_gray"
+                    android:textSize="@dimen/pc_txt_size" />
+
+                <TextView
+                    android:id="@+id/account_recharge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/app_text_size_min"
+                    android:drawableRight="@drawable/arrow_right"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:textColor="@color/color_small_gray"
+                    android:textSize="@dimen/pc_txt_size"
+                    />
+            </RelativeLayout>
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:background="@color/color_small_gray"
+                  android:layout_marginRight="@dimen/app_text_size_min"
+                  android:layout_marginLeft="@dimen/app_text_size_min"
+                  android:visibility="gone"
+            />
+            <RelativeLayout
+                android:id="@+id/withDraw_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/item_click"
+                android:padding="@dimen/app_text_size_min" >
+                <TextView
+                        android:id="@+id/bussiness"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:textColor="@color/main_txt_black"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/account_withDraw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/app_text_size_min"
+                    android:drawableRight="@drawable/arrow_right"
+                    android:gravity="center_vertical|right"
+                    android:singleLine="true"
+                    android:textColor="@color/color_small_gray"
+                    android:textSize="@dimen/pc_txt_size"
+                    android:visibility="gone"
+                    />
+            </RelativeLayout>
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:background="@color/color_small_gray"
+            />
+            <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="联系方式"
+                    android:textColor="@color/color_gray"
+                    android:textSize="@dimen/pc_txt_size"
+                    android:padding="@dimen/app_text_size_min"
+                    />
+            <View android:layout_width="match_parent"
+                  android:layout_height="0.5dp"
+                  android:background="@color/color_small_gray"
+                    />
+
+            <LinearLayout android:layout_width="match_parent"
+                          android:layout_height="match_parent"
+                          android:paddingLeft="@dimen/app_text_size_min"
+                          android:paddingRight="@dimen/app_text_size_min"
+                          android:orientation="vertical"
+                          android:layout_marginTop="8dp"
+                          android:layout_marginBottom="8dp"
+                    >
+
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="match_parent"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/addressLL"
+                                 android:layout_marginBottom="10dp"
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="地址:"
+                               />
+                       <TextView android:id="@+id/address"
+                                 android:layout_width="match_parent"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                               />
+                   </LinearLayout>
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/phone1LL"
+                                 android:layout_marginBottom="10dp"
+                                 android:visibility="gone"
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="手机:"
+                               />
+                       <TextView android:id="@+id/phone1"
+                                 android:layout_width="160dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="1234567890abcde"
+                               />
+                       <TextView android:layout_width="28dp"
+                                 android:layout_height="28dp"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:background="@color/login_normal"
+                               />
+                   </LinearLayout>
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/phone2LL"
+                                 android:layout_marginBottom="10dp"
+                                 android:visibility="gone"
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                               />
+                       <TextView android:id="@+id/phone2"
+                                 android:layout_width="160dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="1234567890abcde"
+                               />
+                       <TextView android:layout_width="28dp"
+                                 android:layout_height="28dp"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:background="@color/login_normal"
+                               />
+                   </LinearLayout>
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/tel1LL"
+                                 android:layout_marginBottom="10dp"
+                                 android:visibility="gone"
+
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="电话:"
+                               />
+                       <TextView android:id="@+id/tel1"
+                                 android:layout_width="160dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="1234567890abcde"
+                               />
+                       <TextView android:layout_width="28dp"
+                                 android:layout_height="28dp"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:background="@color/login_normal"
+                               />
+                   </LinearLayout>
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/tel2LL"
+                                 android:layout_marginBottom="10dp"
+                                 android:visibility="gone"
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                               />
+                       <TextView android:id="@+id/tel2"
+                                 android:layout_width="160dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="1234567890abcde"
+                               />
+                       <TextView android:layout_width="28dp"
+                                 android:layout_height="28dp"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:background="@color/login_normal"
+                               />
+                   </LinearLayout>
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/QQLL"
+                                 android:layout_marginBottom="10dp"
+                                 android:visibility="gone"
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="Q   Q:"
+                               />
+                       <TextView android:id="@+id/QQ"
+                                 android:layout_width="160dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="1234567890abcde"
+                               />
+                   </LinearLayout>
+                   <LinearLayout android:layout_width="wrap_content"
+                                 android:layout_height="wrap_content"
+                                 android:orientation="horizontal"
+                                 android:layout_gravity="center_vertical"
+                                 android:gravity="center_vertical"
+                                 android:id="@+id/wxLL"
+                                 android:layout_marginBottom="10dp"
+                                 android:visibility="gone"
+                           >
+                       <TextView android:layout_width="53dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="微信:"
+                               />
+                       <TextView android:id="@+id/wx"
+                                 android:layout_width="160dp"
+                                 android:layout_height="wrap_content"
+                                 android:textColor="@color/main_txt_black"
+                                 android:textSize="18sp"
+                                 android:text="1234567890abcde"
+                               />
+                   </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </com.accessories.city.view.ReboundScrollView>
+
+</LinearLayout>
