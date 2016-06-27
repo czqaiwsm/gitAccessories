@@ -203,7 +203,7 @@
                                  android:layout_height="28dp"
                                  android:textColor="@color/main_txt_black"
                                  android:textSize="18sp"
-                                 android:background="@color/login_normal"
+                                 android:background="@drawable/phone_call"
                                />
                    </LinearLayout>
                    <LinearLayout android:layout_width="wrap_content"
@@ -231,8 +231,8 @@
                                  android:layout_height="28dp"
                                  android:textColor="@color/main_txt_black"
                                  android:textSize="18sp"
-                                 android:background="@color/login_normal"
-                               />
+                                 android:background="@drawable/phone_call"
+                       />
                    </LinearLayout>
                    <LinearLayout android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
@@ -261,8 +261,8 @@
                                  android:layout_height="28dp"
                                  android:textColor="@color/main_txt_black"
                                  android:textSize="18sp"
-                                 android:background="@color/login_normal"
-                               />
+                                 android:background="@drawable/phone_call"
+                       />
                    </LinearLayout>
                    <LinearLayout android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
@@ -289,8 +289,8 @@
                                  android:layout_height="28dp"
                                  android:textColor="@color/main_txt_black"
                                  android:textSize="18sp"
-                                 android:background="@color/login_normal"
-                               />
+                                 android:background="@drawable/phone_call"
+                       />
                    </LinearLayout>
                    <LinearLayout android:layout_width="wrap_content"
                                  android:layout_height="wrap_content"
