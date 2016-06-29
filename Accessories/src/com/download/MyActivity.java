@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.os.Bundle;
 import com.download.base.utils.ScreenUtils;
 import com.download.update.UpdateMgr;
-import com.accessories.city.R;
 
 public class MyActivity extends Activity {
     /**

@@ -8,9 +8,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.PopupWindow;
-import com.accessories.city.utils.BaseApplication;
 import com.accessories.city.R;
 import com.accessories.city.bean.PayInfo;
+import com.accessories.city.utils.BaseApplication;
 
 /**
  * @desc 请用一句话描述此文件

@@ -3,8 +3,8 @@ package com.accessories.city.activity.teacher;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import com.accessories.city.fragment.teacher.MyAssetFragment;
 import com.accessories.city.activity.BaseActivity;
+import com.accessories.city.fragment.teacher.MyAssetFragment;
 
 public class MyAssetActivity extends BaseActivity {
 	private MyAssetFragment mFragment;

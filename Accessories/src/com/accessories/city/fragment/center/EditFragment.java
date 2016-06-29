@@ -10,10 +10,10 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
+import com.accessories.city.R;
 import com.accessories.city.bean.UserInfo;
 import com.accessories.city.fragment.BaseFragment;
 import com.accessories.city.utils.BaseApplication;
-import com.accessories.city.R;
 
 /**
  *钱包

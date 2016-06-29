@@ -1,9 +1,5 @@
 package com.download.base.utils;
 
-import java.net.InetAddress;
-import java.net.NetworkInterface;
-import java.util.Enumeration;
-
 import android.app.Activity;
 import android.content.ComponentName;
 import android.content.Context;
@@ -12,6 +8,10 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
+
+import java.net.InetAddress;
+import java.net.NetworkInterface;
+import java.util.Enumeration;
 
 /**
  * 跟网络相关的工具类

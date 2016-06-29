@@ -1,25 +1,18 @@
 package com.download.update;
 
 import android.app.ProgressDialog;
-import android.content.BroadcastReceiver;
-import android.content.ComponentName;
-import android.content.Context;
-import android.content.DialogInterface;
+import android.content.*;
 import android.content.DialogInterface.OnCancelListener;
 import android.content.DialogInterface.OnDismissListener;
-import android.content.Intent;
-import android.content.IntentFilter;
-import android.content.ServiceConnection;
 import android.os.IBinder;
 import android.text.TextUtils;
 import android.widget.Toast;
-
+import com.accessories.city.R;
+import com.download.base.utils.AppLog;
 import com.download.base.utils.SDCardUtils;
 import com.download.dialog.AskDialog;
 import com.download.dialog.CustormProgressDialog;
-import com.download.base.utils.AppLog;
 import com.download.utils.IntentBundleKey;
-import com.accessories.city.R;
 
 public class DownloadMgr extends BroadcastReceiver implements
 		CustormProgressDialog.IDownloadDialogListener {

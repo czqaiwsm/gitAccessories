@@ -10,12 +10,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.accessories.city.bean.ChatMsgEntity;
-import com.accessories.city.view.RoundImageView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.accessories.city.R;
+import com.accessories.city.bean.ChatMsgEntity;
 import com.accessories.city.utils.BaseApplication;
 import com.accessories.city.utils.ImageLoaderUtil;
+import com.accessories.city.view.RoundImageView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 

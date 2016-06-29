@@ -1,16 +1,12 @@
 package com.accessories.city.parse;
 
 import com.accessories.city.bean.CateListBean;
-import com.accessories.city.bean.CourseInfo;
-import com.accessories.city.bean.NewsEntity;
 import com.accessories.city.utils.URLConstants;
 import com.google.gson.reflect.TypeToken;
 import com.volley.req.net.inferface.IParser;
 import com.volley.req.parser.JsonParserBase;
 import com.volley.req.parser.ParserUtil;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
 
 /**
  * @desc 教师详情

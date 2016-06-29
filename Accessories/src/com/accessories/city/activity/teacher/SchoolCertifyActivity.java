@@ -3,8 +3,8 @@ package com.accessories.city.activity.teacher;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import com.accessories.city.fragment.home.SchoolCertifyFragment;
 import com.accessories.city.activity.BaseActivity;
+import com.accessories.city.fragment.home.SchoolCertifyFragment;
 
 public class SchoolCertifyActivity extends BaseActivity {
 	private SchoolCertifyFragment mFragment;

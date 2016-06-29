@@ -3,8 +3,8 @@ package com.accessories.city.activity.center;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import com.accessories.city.fragment.center.FeedBackFragment;
 import com.accessories.city.activity.BaseActivity;
+import com.accessories.city.fragment.center.FeedBackFragment;
 
 public class FeedBackActivity extends BaseActivity {
     private FeedBackFragment mFragment;

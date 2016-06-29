@@ -20,11 +20,11 @@ import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.accessories.city.R;
 import com.accessories.city.activity.center.ServiceProtocolActivity;
 import com.accessories.city.bean.BannerImgInfo;
 import com.accessories.city.utils.ImageLoaderUtil;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.List;

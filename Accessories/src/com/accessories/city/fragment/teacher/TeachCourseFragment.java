@@ -6,12 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import com.accessories.city.R;
 import com.accessories.city.activity.center.PurchaseCourseActivity;
 import com.accessories.city.adapter.TeacherCourseAdapter;
+import com.accessories.city.bean.CourseInfo;
 import com.accessories.city.fragment.BaseFragment;
 import com.accessories.city.view.CustomListView;
-import com.accessories.city.R;
-import com.accessories.city.bean.CourseInfo;
 
 import java.util.ArrayList;
 import java.util.List;

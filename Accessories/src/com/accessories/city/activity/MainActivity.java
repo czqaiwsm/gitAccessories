@@ -1,6 +1,5 @@
 package com.accessories.city.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -9,15 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.accessories.city.activity.login.LoginActivity;
-import com.accessories.city.fragment.schedule.ScheduleFragment;
-import com.download.base.utils.ScreenUtils;
-import com.download.update.UpdateMgr;
 import com.accessories.city.R;
 import com.accessories.city.fragment.center.PCenterInfoFragment;
 import com.accessories.city.fragment.msg.MsgInfosFragment;
+import com.accessories.city.fragment.schedule.ScheduleFragment;
 import com.accessories.city.utils.BaseApplication;
 import com.accessories.city.utils.SmartToast;
+import com.download.base.utils.ScreenUtils;
+import com.download.update.UpdateMgr;
 
 
 public class MainActivity extends BaseActivity implements View.OnClickListener{

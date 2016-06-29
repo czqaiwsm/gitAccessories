@@ -9,9 +9,9 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.accessories.city.utils.SmartToast;
 import com.accessories.city.R;
 import com.accessories.city.bean.OrderInfo;
+import com.accessories.city.utils.SmartToast;
 
 import java.util.List;
 

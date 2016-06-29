@@ -9,13 +9,13 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.TextView;
+import com.accessories.city.R;
 import com.accessories.city.adapter.CityAdpter;
+import com.accessories.city.service.LocationUitl;
 import com.accessories.city.utils.BaseApplication;
+import com.accessories.city.utils.SharePreferenceUtils;
 import com.accessories.city.view.CustomListView;
 import com.baidu.location.BDLocation;
-import com.accessories.city.R;
-import com.accessories.city.service.LocationUitl;
-import com.accessories.city.utils.SharePreferenceUtils;
 
 import java.util.ArrayList;
 import java.util.List;

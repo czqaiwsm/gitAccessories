@@ -8,13 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.accessories.city.bean.DataMapConstants;
-import com.accessories.city.fragment.center.SystemMsgFragment;
-import com.accessories.city.utils.URLConstants;
 import com.accessories.city.R;
 import com.accessories.city.activity.center.SystemMsgActivity;
+import com.accessories.city.bean.DataMapConstants;
 import com.accessories.city.fragment.BaseFragment;
+import com.accessories.city.fragment.center.SystemMsgFragment;
 import com.accessories.city.utils.BaseApplication;
+import com.accessories.city.utils.URLConstants;
 
 /**
  * @desc 筛选界面

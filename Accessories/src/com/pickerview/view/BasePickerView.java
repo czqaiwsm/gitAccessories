@@ -2,18 +2,13 @@ package com.pickerview.view;
 
 import android.app.Activity;
 import android.content.Context;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewGroup;
+import android.view.*;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.FrameLayout;
-
-import com.pickerview.utils.PickerViewAnimateUtil;
-import com.pickerview.listener.OnDismissListener;
 import com.accessories.city.R;
+import com.pickerview.listener.OnDismissListener;
+import com.pickerview.utils.PickerViewAnimateUtil;
 
 /**
  * Created by Sai on 15/11/22.

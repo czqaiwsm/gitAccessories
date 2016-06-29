@@ -11,8 +11,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import com.accessories.city.adapter.OrderPageFragmentAdapter;
 import com.accessories.city.R;
+import com.accessories.city.adapter.OrderPageFragmentAdapter;
 import com.accessories.city.fragment.BaseFragment;
 
 import java.util.ArrayList;

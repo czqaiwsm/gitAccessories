@@ -1,5 +1,7 @@
 package com.download.update;
 
+import android.webkit.MimeTypeMap;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -7,8 +9,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
 import java.util.Map;
-
-import android.webkit.MimeTypeMap;
 
 /**
  * Http引擎

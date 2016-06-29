@@ -1,18 +1,17 @@
 package com.pickerview.view;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.*;
-
+import android.content.Context;
+import android.view.View;
+import com.accessories.city.R;
+import com.accessories.city.bean.DateBean;
 import com.pickerview.TimePickerView.Type;
 import com.pickerview.adapter.NumericWheelAdapter;
 import com.pickerview.lib.WheelView;
 import com.pickerview.listener.OnItemSelectedListener;
 
-import android.content.Context;
-import android.view.View;
-import com.accessories.city.R;
-import com.accessories.city.bean.DateBean;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 
 public class WheelTime {

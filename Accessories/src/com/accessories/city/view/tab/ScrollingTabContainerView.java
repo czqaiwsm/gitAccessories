@@ -15,9 +15,9 @@ import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.*;
+import com.accessories.city.R;
 import com.accessories.city.utils.AppLog;
 import com.accessories.city.utils.ScreenUtils;
-import com.accessories.city.R;
 
 /**
  * This widget implements the dynamic action bar tab behavior that can change

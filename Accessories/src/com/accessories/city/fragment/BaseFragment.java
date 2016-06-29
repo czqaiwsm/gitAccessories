@@ -11,6 +11,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.accessories.city.R;
+import com.accessories.city.activity.BaseActivity;
 import com.accessories.city.help.RequsetListener;
 import com.accessories.city.utils.AppLog;
 import com.accessories.city.utils.BaseApplication;
@@ -18,13 +20,10 @@ import com.accessories.city.utils.URLConstants;
 import com.accessories.city.utils.WaitLayer;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.accessories.city.R;
-import com.accessories.city.activity.BaseActivity;
 import com.google.gson.reflect.TypeToken;
 import com.toast.ToasetUtil;
 import com.volley.req.parser.JsonParserBase;
 import com.volley.req.parser.ParserUtil;
-import org.json.JSONException;
 
 /**
  * @desc 公共的Fragment，初始化公共标题部分；如果不需要公共标题，可隐藏

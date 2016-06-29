@@ -1,15 +1,14 @@
 package com.download.update;
 
+import android.os.Handler;
+import android.text.TextUtils;
+import com.download.base.utils.UrlEncode;
+
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-
-import android.os.Handler;
-import android.text.TextUtils;
-
-import com.download.base.utils.UrlEncode;
 
 /**
  * @author kuncheng

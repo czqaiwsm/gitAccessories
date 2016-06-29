@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
+import com.accessories.city.R;
 import com.pickerview.adapter.ArrayWheelAdapter;
 import com.pickerview.lib.WheelView;
 import com.pickerview.listener.OnItemSelectedListener;
 import com.pickerview.view.BasePickerView;
-import com.accessories.city.R;
 
 import java.util.ArrayList;
 

@@ -1,12 +1,12 @@
 package com.pickerview.view;
 
-import java.util.ArrayList;
 import android.view.View;
-
+import com.accessories.city.R;
 import com.pickerview.adapter.ArrayWheelAdapter;
 import com.pickerview.lib.WheelView;
 import com.pickerview.listener.OnItemSelectedListener;
-import com.accessories.city.R;
+
+import java.util.ArrayList;
 
 public class WheelOptions<T> {
 	private View view;

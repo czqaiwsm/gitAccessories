@@ -7,8 +7,8 @@ import android.view.*;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.TextView;
-import com.download.base.utils.ApkDownloadConfig;
 import com.accessories.city.R;
+import com.download.base.utils.ApkDownloadConfig;
 
 public class AskDialog extends AlertDialog implements OnClickListener {
 	public interface OnAskDialogClickListener {

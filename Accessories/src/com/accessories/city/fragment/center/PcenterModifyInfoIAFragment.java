@@ -15,7 +15,6 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import com.accessories.city.R;
 import com.accessories.city.fragment.BaseFragment;
-import com.accessories.city.utils.BaseApplication;
 import com.accessories.city.utils.SmartToast;
 
 /**

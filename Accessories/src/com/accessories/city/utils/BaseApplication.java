@@ -6,16 +6,14 @@ import android.content.Context;
 import android.os.Vibrator;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
-import cn.jpush.android.api.JPushInterface;
 import com.accessories.city.bean.UserInfo;
+import com.accessories.city.service.LocationService;
+import com.accessories.city.service.LocationUitl;
 import com.baidu.location.BDLocation;
-import com.baidu.mapapi.SDKInitializer;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.accessories.city.service.LocationService;
-import com.accessories.city.service.LocationUitl;
 
 /**
  * @author czq

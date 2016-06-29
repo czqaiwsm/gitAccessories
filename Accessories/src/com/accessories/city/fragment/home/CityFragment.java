@@ -6,32 +6,24 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.*;
-import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseExpandableListAdapter;
+import android.widget.ExpandableListView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import com.accessories.city.R;
-import com.accessories.city.adapter.NewsAdpter;
-import com.accessories.city.bean.*;
+import com.accessories.city.bean.City;
+import com.accessories.city.bean.CityChoose;
+import com.accessories.city.bean.CityList;
 import com.accessories.city.fragment.BaseFragment;
-import com.accessories.city.help.PullRefreshStatus;
 import com.accessories.city.help.RequsetListener;
 import com.accessories.city.parse.CityChooseParse;
-import com.accessories.city.utils.AppLog;
 import com.accessories.city.utils.URLConstants;
-import com.accessories.city.view.CustomListView;
-import com.google.gson.reflect.TypeToken;
-import com.toast.ToasetUtil;
 import com.volley.req.net.HttpURL;
 import com.volley.req.net.RequestManager;
 import com.volley.req.net.RequestParam;
-import com.volley.req.net.inferface.IParser;
 import com.volley.req.parser.JsonParserBase;
-import com.volley.req.parser.ParserUtil;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 /**
  * 资讯中心

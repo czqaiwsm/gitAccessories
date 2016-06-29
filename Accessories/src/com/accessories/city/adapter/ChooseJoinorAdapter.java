@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.CheckBox;
 import android.widget.TextView;
-import com.accessories.city.bean.IdInfo;
 import com.accessories.city.R;
+import com.accessories.city.bean.IdInfo;
 
 import java.util.List;
 

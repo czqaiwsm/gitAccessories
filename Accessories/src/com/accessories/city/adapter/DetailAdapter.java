@@ -10,8 +10,8 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
-import com.accessories.city.bean.PayDetail;
 import com.accessories.city.R;
+import com.accessories.city.bean.PayDetail;
 
 import java.util.List;
 

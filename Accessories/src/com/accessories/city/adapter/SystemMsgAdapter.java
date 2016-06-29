@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.accessories.city.fragment.center.SystemMsgFragment;
 import com.accessories.city.R;
 import com.accessories.city.bean.SystemMsg;
+import com.accessories.city.fragment.center.SystemMsgFragment;
 import com.accessories.city.utils.AlertDialogUtils;
 
 import java.util.List;

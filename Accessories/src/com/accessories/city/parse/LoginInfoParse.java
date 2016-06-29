@@ -1,7 +1,6 @@
 package com.accessories.city.parse;
 
 import android.util.Log;
-import com.accessories.city.bean.LoginInfo;
 import com.accessories.city.bean.UserInfo;
 import com.accessories.city.utils.URLConstants;
 import com.google.gson.reflect.TypeToken;

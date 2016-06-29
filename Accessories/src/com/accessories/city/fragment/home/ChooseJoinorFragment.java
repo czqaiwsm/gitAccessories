@@ -7,15 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import com.accessories.city.bean.DataMapConstants;
-import com.accessories.city.bean.IdInfo;
-import com.accessories.city.utils.URLConstants;
-import com.accessories.city.view.CustomListView;
 import com.accessories.city.R;
 import com.accessories.city.adapter.ChooseJoinorAdapter;
+import com.accessories.city.bean.DataMapConstants;
+import com.accessories.city.bean.IdInfo;
 import com.accessories.city.fragment.BaseFragment;
+import com.accessories.city.utils.URLConstants;
+import com.accessories.city.view.CustomListView;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @desc 筛选界面

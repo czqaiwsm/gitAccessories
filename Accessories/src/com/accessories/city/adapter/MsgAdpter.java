@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
-import com.accessories.city.view.RoundImageView;
-import com.nostra13.universalimageloader.core.ImageLoader;
 import com.accessories.city.R;
 import com.accessories.city.bean.MsgDetail;
 import com.accessories.city.utils.ImageLoaderUtil;
+import com.accessories.city.view.RoundImageView;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.List;
 

@@ -25,6 +25,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 import butterknife.Bind;
 import butterknife.ButterKnife;
+import com.accessories.city.R;
 import com.accessories.city.activity.ChooseCityActivity;
 import com.accessories.city.activity.teacher.ChooseJoinorActivity;
 import com.accessories.city.bean.IdcardInfo;
@@ -35,8 +36,6 @@ import com.google.gson.reflect.TypeToken;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.assist.FailReason;
 import com.nostra13.universalimageloader.core.listener.ImageLoadingListener;
-import com.accessories.city.R;
-import com.accessories.city.utils.*;
 import com.volley.req.parser.JsonParserBase;
 import com.volley.req.parser.ParserUtil;
 

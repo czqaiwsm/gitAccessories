@@ -4,11 +4,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.accessories.city.view.CustomListView;
 import com.accessories.city.R;
 import com.accessories.city.adapter.ContactAdpter;
 import com.accessories.city.bean.Contactor;
 import com.accessories.city.fragment.BaseFragment;
+import com.accessories.city.view.CustomListView;
 
 import java.util.ArrayList;
 import java.util.List;

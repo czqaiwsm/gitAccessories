@@ -1,19 +1,5 @@
 package com.download.update;
 
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.text.DecimalFormat;
-import java.util.WeakHashMap;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-
-import com.download.base.utils.Utility;
-import com.download.base.utils.AppLog;
-import com.download.utils.IntentBundleKey;
-import com.download.utils.StroageUtil;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -26,6 +12,19 @@ import android.os.Environment;
 import android.os.IBinder;
 import android.text.TextUtils;
 import com.accessories.city.R;
+import com.download.base.utils.AppLog;
+import com.download.base.utils.Utility;
+import com.download.utils.IntentBundleKey;
+import com.download.utils.StroageUtil;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.text.DecimalFormat;
+import java.util.WeakHashMap;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
 public class DownloadService extends Service {

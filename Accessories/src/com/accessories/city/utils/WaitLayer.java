@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.*;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.*;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import com.accessories.city.R;
 
 public class WaitLayer {

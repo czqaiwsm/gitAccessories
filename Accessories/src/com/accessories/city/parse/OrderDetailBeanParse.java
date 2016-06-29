@@ -1,8 +1,8 @@
 package com.accessories.city.parse;
 
-import com.google.gson.reflect.TypeToken;
 import com.accessories.city.bean.OrderDetailInfo;
 import com.accessories.city.utils.URLConstants;
+import com.google.gson.reflect.TypeToken;
 import com.volley.req.net.inferface.IParser;
 import com.volley.req.parser.JsonParserBase;
 import com.volley.req.parser.ParserUtil;

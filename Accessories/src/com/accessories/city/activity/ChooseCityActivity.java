@@ -3,7 +3,6 @@ package com.accessories.city.activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import com.accessories.city.fragment.ChooseCitytFragment;
 import com.accessories.city.fragment.home.CityFragment;
 
 public class ChooseCityActivity extends BaseActivity {

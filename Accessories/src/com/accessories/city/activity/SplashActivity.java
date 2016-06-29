@@ -14,10 +14,10 @@ import android.view.animation.Animation;
 import android.view.animation.Animation.AnimationListener;
 import android.widget.ImageView;
 import cn.jpush.android.api.JPushInterface;
-import com.accessories.city.utils.BaseApplication;
-import com.accessories.city.utils.NetUtils;
 import com.accessories.city.R;
 import com.accessories.city.activity.login.LoginActivity;
+import com.accessories.city.utils.BaseApplication;
+import com.accessories.city.utils.NetUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;

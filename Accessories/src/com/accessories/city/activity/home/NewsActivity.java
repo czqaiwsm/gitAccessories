@@ -5,7 +5,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import com.accessories.city.activity.BaseActivity;
 import com.accessories.city.fragment.home.NewsFragment;
-import com.accessories.city.fragment.home.SearchFragment;
 
 public class NewsActivity extends BaseActivity {
 	private NewsFragment mFragment;
