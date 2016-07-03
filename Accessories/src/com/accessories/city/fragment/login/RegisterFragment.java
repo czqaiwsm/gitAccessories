@@ -177,7 +177,7 @@ public class RegisterFragment extends BaseFragment implements OnClickListener,Re
 				timeHandler.sendMessage(message);
 				requetType = 1;
 				phone = register_phone.getText().toString();
-				requestData(0);// ----------发送请求
+				requestData(1);// ----------发送请求
 				getCode.requestFocus();
 			}
 		}
@@ -215,35 +215,36 @@ public class RegisterFragment extends BaseFragment implements OnClickListener,Re
 
 
 	@Override
-	public void requestData(int requestType) {
-		RequestParam param = null;
-        switch (requetType){
+	public void requestData(int reuestType) {
+		RequestParam param = new RequestParam();
+		HttpURL url = new HttpURL();
+		Map postParams = new HashMap();
+
+		switch (requetType){
 			case 1:
-				param = RequestHelp.getVcodePara(register_phone.getText().toString());
-//				param.setmParserClassName(VerifyCodeParse.class.getName());
+				url.setmBaseUrl(URLConstants.MSGCODE);
+				postParams.put("phone", phone);
 				param.setmParserClassName(VerifyCodeParse.class.getName());
 				break;
 			case 2://注册
-				HttpURL url = new HttpURL();
+
 				url.setmBaseUrl(URLConstants.REGIST);
-				Map postParams = new HashMap();
 				postParams.put("vcode",inputCode.getText().toString());
 				postParams.put("phone",register_phone.getText().toString());
 				postParams.put("pwd",register_pass.getText().toString());
-				param = new RequestParam();
 				param.setmParserClassName(BaseParse.class.getName());
-				param.setmPostMap(postParams);
-				param.setmHttpURL(url);
-				param.setPostRequestMethod();
 				break;
 		}
+		param.setmPostMap(postParams);
+		param.setmHttpURL(url);
+		param.setPostRequestMethod();
 		RequestManager.getRequestData(getActivity(), createReqSuccessListener(), createMyReqErrorListener(), param);
 	}
 
 	private VerifyCode verifyCode = null;//验证码
 
 	@Override
-	public void handleRspSuccess(int requestType,Object obj) {
+	public void handleRspSuccess(int questType,Object obj) {
 		switch (requetType){
 			case 1:
 				MSG_TOTAL_TIME = -1;

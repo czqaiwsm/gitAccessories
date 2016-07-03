@@ -192,18 +192,19 @@ public class ForgetPasswordFragment extends BaseFragment implements OnClickListe
 
 
 	@Override
-	public void requestData(int requestType) {
-		RequestParam param = null;
+	public void requestData(int questType) {
+		RequestParam param = new RequestParam();
+		HttpURL url = new HttpURL();
+		Map postParams = new HashMap();
+
 		switch (requetType){
 			case 1:
-				param = RequestHelp.getVcodePara(forget_phone.getText().toString());
-//				param.setmParserClassName(VerifyCodeParse.class.getName());
+				url.setmBaseUrl(URLConstants.MSGCODE);
+				postParams.put("phone", phone);
 				param.setmParserClassName(VerifyCodeParse.class.getName());
 				break;
 			case 2://注册
-				HttpURL url = new HttpURL();
 				url.setmBaseUrl(URLConstants.UPDATEPWD);
-				Map postParams = new HashMap();
 				postParams.put("phone", phone);
 				postParams.put("vcode",forget_inputCode.getText().toString());
 //				postParams.put("userId",BaseApplication.getUserInfo().getId());
@@ -212,14 +213,13 @@ public class ForgetPasswordFragment extends BaseFragment implements OnClickListe
 //				postParams.put("vcode",inputCode.getText().toString());
 //				postParams.put("sendId",verifyCode.getSendId());
 //				postParams.put("sendId",verifyCode.getSendId());
-				param = new RequestParam();
 				param.setmParserClassName(BaseParse.class.getName());
 //				param.setmParserClassName(new BaseParse());
-				param.setmPostMap(postParams);
-				param.setmHttpURL(url);
-				param.setPostRequestMethod();
 				break;
 		}
+		param.setmPostMap(postParams);
+		param.setmHttpURL(url);
+		param.setPostRequestMethod();
 		RequestManager.getRequestData(getActivity(), createReqSuccessListener(), createMyReqErrorListener(), param);
 	}
 
