@@ -206,7 +206,7 @@ public class ForgetPasswordFragment extends BaseFragment implements OnClickListe
 			case 2://注册
 				url.setmBaseUrl(URLConstants.UPDATEPWD);
 				postParams.put("phone", phone);
-				postParams.put("vcode",forget_inputCode.getText().toString());
+				postParams.put("code",forget_inputCode.getText().toString());
 //				postParams.put("userId",BaseApplication.getUserInfo().getId());
 				postParams.put("newPwd",forget_pass.getText().toString());
 
