@@ -155,6 +155,7 @@ public class GuideViewPagerAdapter extends PagerAdapter {
 	}
 
 	private boolean initDot() {
+		m_obj_dotContain.setVisibility(View.GONE);
 		m_obj_dotContain.removeAllViews();
 		if (LENGTH > 0) {
 			ImageView dotView;
