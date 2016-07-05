@@ -229,7 +229,7 @@ public class RegisterFragment extends BaseFragment implements OnClickListener,Re
 			case 2://注册
 
 				url.setmBaseUrl(URLConstants.REGIST);
-				postParams.put("code",inputCode.getText().toString());
+//				postParams.put("code",inputCode.getText().toString());
 				postParams.put("phone",register_phone.getText().toString());
 				postParams.put("pwd",register_pass.getText().toString());
 				param.setmParserClassName(BaseParse.class.getName());
