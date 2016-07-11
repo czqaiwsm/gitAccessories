@@ -104,7 +104,7 @@ public class CityFragment extends BaseFragment implements RequsetListener{
     }
 
     private void initTitle(View view){
-        setTitleText("商家列表");
+        setTitleText("城市");
         setLeftHeadIcon(0);
     }
 

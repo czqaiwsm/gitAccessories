@@ -38,6 +38,7 @@ public class GuideViewPagerAdapter extends PagerAdapter {
 	private Handler uiHadler = null;
 	public static boolean isAutoPlay = false;
     private ArrayList<BannerImgInfo> bannerImgInfos;
+	private  boolean isNeedDot = false;
 	/**
 	 * @param id 引导的图片数组
 	 * @param view 引导页布局文件
@@ -53,6 +54,13 @@ public class GuideViewPagerAdapter extends PagerAdapter {
 	public GuideViewPagerAdapter(ArrayList<BannerImgInfo> bannerImgInfos, View view, Context context) {
 		this.context = context;
 		this.bannerImgInfos = bannerImgInfos;
+		m_obj_view = view;
+		initBaseView();
+	}
+	public GuideViewPagerAdapter(ArrayList<BannerImgInfo> bannerImgInfos, View view, Context context,boolean isNeedDot) {
+		this.context = context;
+		this.bannerImgInfos = bannerImgInfos;
+		this.isNeedDot = isNeedDot;
 		m_obj_view = view;
 		initBaseView();
 	}
@@ -156,6 +164,10 @@ public class GuideViewPagerAdapter extends PagerAdapter {
 
 	private boolean initDot() {
 		m_obj_dotContain.setVisibility(View.GONE);
+		if(isNeedDot){
+			m_obj_dotContain.setVisibility(View.VISIBLE);
+
+		}
 		m_obj_dotContain.removeAllViews();
 		if (LENGTH > 0) {
 			ImageView dotView;
@@ -195,6 +207,12 @@ public class GuideViewPagerAdapter extends PagerAdapter {
 						return true;
 					}
 				});
+
+		m_obj_curDot.setVisibility(View.GONE);
+
+		if(isNeedDot){
+			m_obj_curDot.setVisibility(View.VISIBLE);
+		}
 	}
 
 	private ImageView buildImageView(int id) {
@@ -305,6 +323,10 @@ public class GuideViewPagerAdapter extends PagerAdapter {
    public void setDotAlignBottom(int px){
 	   FrameLayout dot_frame = (FrameLayout) m_obj_view.findViewById(R.id.dot_frame);
 
+	   dot_frame.setVisibility(View.GONE);
+	   if(isNeedDot){
+		   dot_frame.setVisibility(View.VISIBLE);
+	   }
 	   /*****因为FrameLayout的父布局是RelativeLayout 所以类型为 RelativeLayout.LayoutParams****/
 	   RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(dot_frame.getLayoutParams());
 	   /****设置布局位置****/

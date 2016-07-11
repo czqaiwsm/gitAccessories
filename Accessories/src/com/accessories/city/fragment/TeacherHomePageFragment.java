@@ -171,7 +171,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
             return;
         }
 
-        guideAdapter = new GuideViewPagerAdapter(bannerImgInfos, view, mActivity);
+        guideAdapter = new GuideViewPagerAdapter(bannerImgInfos, view, mActivity,true);
         guideAdapter.setDotAlignBottom((int) DensityUtils.px2dp(mActivity, 10f));
         if(!guideAdapter.isAutoPlay){
             guideAdapter.setAutoPlay(viewpager, true);
