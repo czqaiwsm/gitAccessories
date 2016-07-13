@@ -199,10 +199,10 @@ public class UpdateMgr {
 			HttpURL url = new HttpURL();
 			url.setmBaseUrl(URLConstants.GETVERSION);
 			Map postParams = new HashMap();
-			postParams.put("type", "0");
 			RequestParam param = new RequestParam();
+			postParams.put("type", "0");
 //        param.setmParserClassName(LoginInfoParse.class.getName());
-			param.setmPostarams(postParams);
+			param.setmPostMap(postParams);
 			param.setmHttpURL(url);
 			param.setPostRequestMethod();
 			RequestManager.getRequestData(mContext, createMyReqSuccessListener(autoUpdate),null, param);
@@ -232,7 +232,9 @@ public class UpdateMgr {
 							PackageInfo pInfo = pm.getPackageInfo(mContext.getPackageName(), 0);
 
 //							&& !TextUtils.isEmpty(version.getDownPath())
-							if(version != null && version.getVersionNo().compareToIgnoreCase(pInfo.versionCode+"")>0 ){//需要更新
+							System.out.println("version:"+version.getVersionNo()+"  code:"+pInfo.versionCode);
+							System.out.println(">>>>>>"+version.getVersionNo().compareToIgnoreCase(pInfo.versionCode+""));
+							if(version != null && Integer.valueOf(version.getVersionNo())>pInfo.versionCode){//需要更新
 								UpdateInfo info = new UpdateInfo();
 								info.setDownloadUrl(version.getAppUrl());
 								info.setUpdateDesc(version.getContent());
