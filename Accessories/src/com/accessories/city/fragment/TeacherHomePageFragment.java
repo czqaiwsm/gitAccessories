@@ -86,7 +86,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         home_header_cityname = (TextView)view.findViewById(R.id.home_header_cityname);
         home_header_cityname.setOnClickListener(this);
         initView(converView);
-        requestTask(0);
+        requestTask(1);
     }
 
     private void initView(View view) {
@@ -104,7 +104,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         callListView.setOnRefreshListener(new CustomListView.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                requestData(0);
+                requestData(1);
             }
         });
 
@@ -205,10 +205,9 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
     protected void requestData(int requestType) {
         HttpURL url = new HttpURL();
         url.setmBaseUrl(URLConstants.Home);
-
         Map postParams = new HashMap();
-        postParams.put("cityId", cityId);
         RequestParam param = new RequestParam();
+        postParams.put("cityId", cityId);
 //        param.setmParserClassName(HomePageBannerParse.class.getName());
         param.setmParserClassName(HomePageBannerParse.class.getName());
         param.setmPostMap(postParams);

@@ -7,18 +7,35 @@ package com.accessories.city.bean;
  */
 public class Version {
 
-   private String versionCode;//	版本号
-   private String versionName;//	版本名称
-   private String versionText;//	版本描述
-   private String downPath	   ;//下载地址
-    private String isForce = "-1";
+    private String content;//部分BUG提交",//更新内容
+    private String appUrl;//,//下载地址
+    private String versionNo;//2",//版本号
+    private String versionName;//v1.1"//版本名称
 
-    public String getVersionCode() {
-        return versionCode;
+    private String isForce = "0";
+
+    public String getContent() {
+        return content;
     }
 
-    public void setVersionCode(String versionCode) {
-        this.versionCode = versionCode;
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    public String getAppUrl() {
+        return appUrl;
+    }
+
+    public void setAppUrl(String appUrl) {
+        this.appUrl = appUrl;
+    }
+
+    public String getVersionNo() {
+        return versionNo;
+    }
+
+    public void setVersionNo(String versionNo) {
+        this.versionNo = versionNo;
     }
 
     public String getVersionName() {
@@ -29,22 +46,6 @@ public class Version {
         this.versionName = versionName;
     }
 
-    public String getVersionText() {
-        return versionText;
-    }
-
-    public void setVersionText(String versionText) {
-        this.versionText = versionText;
-    }
-
-    public String getDownPath() {
-        return downPath;
-    }
-
-    public void setDownPath(String downPath) {
-        this.downPath = downPath;
-    }
-
     public String getIsForce() {
         return isForce;
     }
@@ -52,4 +53,10 @@ public class Version {
     public void setIsForce(String isForce) {
         this.isForce = isForce;
     }
+
+
+    public static void main(String args[]){
+
+    }
+
 }

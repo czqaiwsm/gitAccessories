@@ -28,6 +28,7 @@ import com.volley.req.parser.JsonParserBase;
 import com.volley.req.parser.ParserUtil;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -196,8 +197,9 @@ public class UpdateMgr {
 //			/******2.end 接口请求结束，开始下载**********/
 
 			HttpURL url = new HttpURL();
-			url.setmBaseUrl(URLConstants.BASE_URL);
-			Map postParams = RequestHelp.getBaseParaMap("Vervion") ;
+			url.setmBaseUrl(URLConstants.GETVERSION);
+			Map postParams = new HashMap();
+			postParams.put("type", "0");
 			RequestParam param = new RequestParam();
 //        param.setmParserClassName(LoginInfoParse.class.getName());
 			param.setmPostarams(postParams);
@@ -228,11 +230,12 @@ public class UpdateMgr {
 							Version version = (Version)result.getObj();
 							PackageManager pm = mContext.getPackageManager();
 							PackageInfo pInfo = pm.getPackageInfo(mContext.getPackageName(), 0);
+
 //							&& !TextUtils.isEmpty(version.getDownPath())
-							if(version != null ){//需要更新
+							if(version != null && version.getVersionNo().compareToIgnoreCase(pInfo.versionCode+"")>0 ){//需要更新
 								UpdateInfo info = new UpdateInfo();
-								info.setDownloadUrl(version.getDownPath());
-								info.setUpdateDesc(version.getVersionText());
+								info.setDownloadUrl(version.getAppUrl());
+								info.setUpdateDesc(version.getContent());
 								if("0".equalsIgnoreCase(version.getIsForce())){
 									IS_FORCE_UPDATE = false;
 								}else {
