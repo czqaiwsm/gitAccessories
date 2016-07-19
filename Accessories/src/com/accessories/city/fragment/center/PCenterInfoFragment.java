@@ -132,7 +132,7 @@ public class PCenterInfoFragment extends BaseFragment implements OnClickListener
         account_customname = (TextView)v.findViewById(R.id.account_customname);
         account_ordername = (TextView)v.findViewById(R.id.account_ordername);
 
-        pcenter_avatar_layout.setOnClickListener(this);
+//        pcenter_avatar_layout.setOnClickListener(this);
         wallet_layout.setOnClickListener(this);
         order_layout.setOnClickListener(this);
         caution_layout.setOnClickListener(this);

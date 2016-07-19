@@ -48,92 +48,39 @@
 
             </RelativeLayout>
 
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:background="@color/color_small_gray"
-            />
-            <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="主营"
-                    android:textColor="@color/color_gray"
-                    android:textSize="@dimen/pc_txt_size"
-                    android:padding="@dimen/app_text_size_min"
-                    />
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:background="@color/color_small_gray"
-            />
 
-            <RelativeLayout
-                android:id="@+id/recharge_layout"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/item_click"
-                android:visibility="gone"
-                android:padding="@dimen/app_text_size_min" >
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:text="@string/recharge"
-                    android:textColor="@color/color_small_gray"
-                    android:textSize="@dimen/pc_txt_size" />
 
-                <TextView
-                    android:id="@+id/account_recharge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:drawablePadding="@dimen/app_text_size_min"
-                    android:drawableRight="@drawable/arrow_right"
-                    android:gravity="center_vertical|right"
-                    android:singleLine="true"
-                    android:textColor="@color/color_small_gray"
-                    android:textSize="@dimen/pc_txt_size"
-                    />
-            </RelativeLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:background="@color/color_small_gray"
-                  android:layout_marginRight="@dimen/app_text_size_min"
-                  android:layout_marginLeft="@dimen/app_text_size_min"
-                  android:visibility="gone"
-            />
             <RelativeLayout
                 android:id="@+id/withDraw_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/item_click"
-                android:padding="@dimen/app_text_size_min" >
+                android:background="@drawable/shape_white_gray_bound"
+                android:layout_marginLeft="@dimen/dp_15"
+                android:layout_marginRight="@dimen/dp_15"
+                android:padding="@dimen/app_text_size_min"
+                >
+                <TextView
+                        android:id="@+id/igTv1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="主营"
+                        android:textColor="@color/color_gray"
+                        android:textSize="@dimen/pc_txt_size"
+                        android:padding="8dp"
+                        android:gravity="center"
+                />
                 <TextView
                         android:id="@+id/bussiness"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:textColor="@color/main_txt_black"
-                    android:textSize="18sp" />
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:textColor="@color/main_txt_black"
+                        android:layout_below="@+id/igTv1"
+                        android:textSize="18sp" />
 
-                <TextView
-                    android:id="@+id/account_withDraw"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:drawablePadding="@dimen/app_text_size_min"
-                    android:drawableRight="@drawable/arrow_right"
-                    android:gravity="center_vertical|right"
-                    android:singleLine="true"
-                    android:textColor="@color/color_small_gray"
-                    android:textSize="@dimen/pc_txt_size"
-                    android:visibility="gone"
-                    />
+
+
             </RelativeLayout>
-            <View android:layout_width="match_parent"
-                  android:layout_height="0.5dp"
-                  android:background="@color/color_small_gray"
-            />
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -162,7 +109,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/addressLL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                            >
                        <TextView android:layout_width="53dp"
                                  android:layout_height="wrap_content"
@@ -183,7 +130,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/phone1LL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                                  android:visibility="gone"
                            >
                        <TextView android:layout_width="53dp"
@@ -212,7 +159,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/phone2LL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                                  android:visibility="gone"
                            >
                        <TextView android:layout_width="53dp"
@@ -240,7 +187,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/tel1LL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                                  android:visibility="gone"
 
                            >
@@ -270,7 +217,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/tel2LL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                                  android:visibility="gone"
                            >
                        <TextView android:layout_width="53dp"
@@ -298,7 +245,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/QQLL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                                  android:visibility="gone"
                            >
                        <TextView android:layout_width="53dp"
@@ -321,7 +268,7 @@
                                  android:layout_gravity="center_vertical"
                                  android:gravity="center_vertical"
                                  android:id="@+id/wxLL"
-                                 android:layout_marginBottom="10dp"
+                                 android:layout_marginBottom="15dp"
                                  android:visibility="gone"
                            >
                        <TextView android:layout_width="53dp"

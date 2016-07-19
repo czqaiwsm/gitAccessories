@@ -21,6 +21,7 @@ import com.accessories.city.fragment.BaseFragment;
 import com.accessories.city.help.RequsetListener;
 import com.accessories.city.utils.BaseApplication;
 import com.accessories.city.utils.URLConstants;
+import com.accessories.city.view.ReboundScrollView;
 import com.google.gson.reflect.TypeToken;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.volley.req.net.HttpURL;
@@ -45,16 +46,8 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
     TextView selleName;
     @Bind(R.id.img)
     ImageView img;
-    @Bind(R.id.balance_layout)
-    RelativeLayout balanceLayout;
-    @Bind(R.id.account_recharge)
-    TextView accountRecharge;
-    @Bind(R.id.recharge_layout)
-    RelativeLayout rechargeLayout;
-    @Bind(R.id.account_withDraw)
-    TextView accountWithDraw;
-    @Bind(R.id.withDraw_layout)
-    RelativeLayout withDrawLayout;
+    @Bind(R.id.bussiness)
+    TextView bussiness;
     @Bind(R.id.address)
     TextView address;
     @Bind(R.id.addressLL)
@@ -83,16 +76,16 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
     TextView wx;
     @Bind(R.id.wxLL)
     LinearLayout wxLL;
-    @Bind(R.id.bussiness)
-    TextView bussiness;
+    @Bind(R.id.container)
+    LinearLayout container;
+    private String shopId;
 
-    private String shopId ;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = mActivity.getIntent();
-        if(intent != null){
-            shopId = intent.hasExtra("shopId")?intent.getStringExtra("shopId"):"";
+        if (intent != null) {
+            shopId = intent.hasExtra("shopId") ? intent.getStringExtra("shopId") : "";
         }
     }
 
@@ -126,7 +119,8 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
     }
 
 
-   private String phoneStr = "";
+    private String phoneStr = "";
+
     @Override
     public void onClick(View v) {
         // TODO Auto-generated method stub
@@ -163,10 +157,10 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
     public void requestData(int requestType) {
         HttpURL url = new HttpURL();
         Map postParams = new HashMap();
-        switch (requestType){
+        switch (requestType) {
             case 1:
                 url.setmBaseUrl(URLConstants.SHOPDETAIL);
-                postParams.put("shopId",shopId);
+                postParams.put("shopId", shopId);
                 break;
             case 2:
                 url.setmBaseUrl(URLConstants.CALL);
@@ -184,41 +178,41 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
 
     @Override
     public void handleRspSuccess(int requestType, Object obj) {
-        switch (requestType){
+        switch (requestType) {
             case 1:
 
-                JsonParserBase<SellerInfo> jsonParserBase =  ParserUtil.fromJsonBase(obj.toString(), new TypeToken<JsonParserBase<SellerInfo>>() {
+                JsonParserBase<SellerInfo> jsonParserBase = ParserUtil.fromJsonBase(obj.toString(), new TypeToken<JsonParserBase<SellerInfo>>() {
                 }.getType());
-                SellerInfo balanceInfo =  jsonParserBase.getObj();
+                SellerInfo balanceInfo = jsonParserBase.getObj();
                 if (balanceInfo == null) return;
                 ImageLoader.getInstance().displayImage(balanceInfo.getShopPic(), img);
                 selleName.setText(balanceInfo.getShopName());
                 bussiness.setText(balanceInfo.getShopDesc());
-                if(!TextUtils.isEmpty(balanceInfo.getShopAddr())){
+                if (!TextUtils.isEmpty(balanceInfo.getShopAddr())) {
                     address.setText(balanceInfo.getShopAddr());
                     addressLL.setVisibility(View.VISIBLE);
                 }
-                if(!TextUtils.isEmpty(balanceInfo.getPhone())){
+                if (!TextUtils.isEmpty(balanceInfo.getPhone())) {
                     phone1.setText(balanceInfo.getPhone());
                     phone1LL.setVisibility(View.VISIBLE);
                 }
-                if(!TextUtils.isEmpty(balanceInfo.getPhone2())){
+                if (!TextUtils.isEmpty(balanceInfo.getPhone2())) {
                     phone2.setText(balanceInfo.getPhone2());
                     phone2LL.setVisibility(View.VISIBLE);
                 }
-                if(!TextUtils.isEmpty(balanceInfo.getTel())){
+                if (!TextUtils.isEmpty(balanceInfo.getTel())) {
                     tel1.setText(balanceInfo.getTel());
                     tel1LL.setVisibility(View.VISIBLE);
                 }
-                if(!TextUtils.isEmpty(balanceInfo.getTel2())){
+                if (!TextUtils.isEmpty(balanceInfo.getTel2())) {
                     tel2.setText(balanceInfo.getTel2());
                     tel2LL.setVisibility(View.VISIBLE);
                 }
-                if(!TextUtils.isEmpty(balanceInfo.getQq())){
+                if (!TextUtils.isEmpty(balanceInfo.getQq())) {
                     QQ.setText(balanceInfo.getQq());
                     QQLL.setVisibility(View.VISIBLE);
                 }
-                if(!TextUtils.isEmpty(balanceInfo.getWx())){
+                if (!TextUtils.isEmpty(balanceInfo.getWx())) {
                     wx.setText(balanceInfo.getWx());
                     wxLL.setVisibility(View.VISIBLE);
                 }
@@ -228,7 +222,6 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
                 break;
 
         }
-
 
 
     }

@@ -21,6 +21,7 @@
                     >
                 <ImageView android:layout_width="match_parent"
                            android:layout_height="match_parent"
+                            android:background="@drawable/rr"
                            android:id="@+id/banner"/>
             </RelativeLayout>
 
@@ -37,10 +38,6 @@
                         android:listSelector="@drawable/item_click"
                         android:numColumns="4"
                         android:gravity="center"
-                        android:horizontalSpacing="1dp"
-                        android:verticalSpacing="1dp"
-                        android:layout_marginTop="1dp"
-                        android:layout_marginBottom="1dp"
                 />
             </LinearLayout>
 
