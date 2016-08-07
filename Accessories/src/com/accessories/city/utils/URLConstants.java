@@ -45,6 +45,8 @@ public class URLConstants {
     public static final String CITYLIST =ACBASE_URL+"/cityList.do";//城市列表
     public static final String GETMSGCODE =ACBASE_URL+"/getMsgCode.do";//获取验证码
     public static final String SHOPDETAIL =ACBASE_URL+"/shopDetail.do";//商家主页
+    public static final String SHOPLOGIN =ACBASE_URL+"/shopLogin.do";//商家登录
+    public static final String SHOPCALLRECORDLIST =ACBASE_URL+"/shopCallRecordList.do";//商家登录
     public static final String CALL =ACBASE_URL+"/call.do";//拨打电话 积分
     public static final String LOGIN =ACBASE_URL+"/login.do";//登录
     public static final String REGIST =ACBASE_URL+"/regist.do";//注册

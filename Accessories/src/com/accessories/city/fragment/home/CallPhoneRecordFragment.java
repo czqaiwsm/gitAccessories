@@ -10,6 +10,7 @@ import android.widget.*;
 import android.widget.AdapterView.OnItemClickListener;
 import com.accessories.city.R;
 import com.accessories.city.activity.center.SellerInfoActivity;
+import com.accessories.city.adapter.CallPhoneRecordAdpter;
 import com.accessories.city.adapter.NewsAdpter;
 import com.accessories.city.bean.NewsEntity;
 import com.accessories.city.bean.SellerList;
@@ -34,7 +35,7 @@ import java.util.Map;
 /**
  * 资讯中心
  */
-public class NewsFragment extends BaseFragment implements RequsetListener, CustomListView.OnLoadMoreListener {
+public class CallPhoneRecordFragment extends BaseFragment implements RequsetListener, CustomListView.OnLoadMoreListener {
 
     private CustomListView customListView = null;
     private TextView noData;
@@ -42,23 +43,20 @@ public class NewsFragment extends BaseFragment implements RequsetListener, Custo
     private LinearLayout searchLL;
     private EditText search_edit;
     private Button search_btn;
-    NewsAdpter adapter;
+    CallPhoneRecordAdpter adapter;
     int pageSize = 20, pageNo = 1;
     private PullRefreshStatus status = PullRefreshStatus.NORMAL;
 
-    private String cityId, cateId;
+    private String shopId;
 
 
-    int flag = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getActivity().getIntent();
         if (intent != null) {
-            cityId = intent.hasExtra("cityId") ? intent.getStringExtra("cityId") : "";
-            cateId = intent.hasExtra("cateId") ? intent.getStringExtra("cateId") : "";
-            flag = intent.getFlags();
+            shopId = intent.hasExtra("shopId") ? intent.getStringExtra("shopId") : "";
         }
     }
 
@@ -73,25 +71,17 @@ public class NewsFragment extends BaseFragment implements RequsetListener, Custo
         super.onViewCreated(view, savedInstanceState);
         initTitle(view);
         initView(view);
-        if(flag != 2)
         requestTask(0);
     }
 
     protected void requestData(int req) {
         HttpURL url = new HttpURL();
-        url.setmBaseUrl(URLConstants.SHOPLIST);
+        url.setmBaseUrl(URLConstants.SHOPCALLRECORDLIST);
         Map postParams = new HashMap<String, String>();
 
         postParams.put("page", "" + pageNo);
         postParams.put("pageSize", "" + pageSize);
-        postParams.put("cityId", "" + cityId);
-        postParams.put("lat", "" + BaseApplication.getInstance().mapLocation.getLatitude());
-        postParams.put("lng", "" + BaseApplication.getInstance().mapLocation.getLongitude());
-        if (flag == 2) {
-            postParams.put("search", search_edit.getText().toString());//分类ID
-        } else {
-            postParams.put("cateId", cateId);//分类ID
-        }
+        postParams.put("shopId", "" + shopId);
         RequestParam param = new RequestParam();
         param.setmPostMap(postParams);
         param.setmHttpURL(url);
@@ -141,12 +131,9 @@ public class NewsFragment extends BaseFragment implements RequsetListener, Custo
             }
         });
         searchLL.setVisibility(View.GONE);
-        if (flag == 2) {
-            searchLL.setVisibility(View.VISIBLE);
-        }
         customListView.setCanLoadMore(false);
         customListView.setCanRefresh(true);
-        adapter = new NewsAdpter(mActivity, list);
+        adapter = new CallPhoneRecordAdpter(mActivity, list);
         customListView.setAdapter(adapter);
         customListView.setOnItemClickListener(new OnItemClickListener() {
 
@@ -223,10 +210,7 @@ public class NewsFragment extends BaseFragment implements RequsetListener, Custo
 
     private void initTitle(View view) {
         setLeftHeadIcon(0);
-        setTitleText("商家列表");
-        if (flag == 2) {
-            setTitleText("搜索");
-        }
+        setTitleText("电话记录");
     }
 
 }

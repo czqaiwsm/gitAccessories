@@ -7,10 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.RadioGroup;
-import android.widget.TextView;
+import android.widget.*;
 import com.accessories.city.R;
 import com.accessories.city.activity.ChooseCityActivity;
 import com.accessories.city.activity.home.NewsActivity;
@@ -50,6 +47,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
     public static HomeInfo homeInfo;
     private View converView;
     private TextView home_header_cityname;
+    private FrameLayout search;
     private ViewPager viewpager = null;
     private GuideViewPagerAdapter guideAdapter = null;
     private int ids[] = {R.drawable.aot, R.drawable.aot, R.drawable.aot};
@@ -84,6 +82,9 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         super.onViewCreated(view, savedInstanceState);
         callListView = (CustomListView)view.findViewById(R.id.callListView);
         home_header_cityname = (TextView)view.findViewById(R.id.home_header_cityname);
+        search = (FrameLayout) view.findViewById(R.id.search);
+        search.setVisibility(View.VISIBLE);
+        search.setOnClickListener(this);
         home_header_cityname.setOnClickListener(this);
         initView(converView);
         requestTask(1);
@@ -107,7 +108,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
                 requestData(1);
             }
         });
-
+        home_header_cityname.setText(cityName);
         adapter = new ClassTypeAdpter(getActivity(),list);
         viewForScrollView.setAdapter(adapter);
 
@@ -240,17 +241,6 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         }
     }
 
-    @Override
-    public void onHiddenChanged(boolean hidden) {
-        AppLog.Loge("hidden:" + hidden + "  isHiden:" + isHidden());
-//       if(!hidden){//可见时 调接口
-//       }
-    }
-
-    @Override
-    public void setUserVisibleHint(boolean isVisibleToUser) {
-        AppLog.Loge("setUserVisibleHint:" + isVisibleToUser + "");
-    }
 
     @Override
     public void onClick(View v) {
@@ -258,6 +248,12 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         switch (v.getId()) {
             case R.id.home_header_cityname:
                 toClassActivity(this,ChooseCityActivity.class.getName());
+                break;
+            case R.id.search:
+                Intent intent = new Intent(mActivity,NewsActivity.class);
+                intent.putExtra("cityId",cityId);
+                intent.setFlags(2);//搜索
+                startActivity(intent);
                 break;
             default:
                 break;

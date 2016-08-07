@@ -1,18 +1,22 @@
 package com.accessories.city.fragment.msg;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import com.accessories.city.R;
+import com.accessories.city.activity.home.NewsActivity;
 import com.accessories.city.adapter.ClassTypeAdpter;
 import com.accessories.city.bean.CateListBean;
 import com.accessories.city.bean.CateSubTypeEntity;
 import com.accessories.city.fragment.BaseFragment;
 import com.accessories.city.help.RequsetListener;
 import com.accessories.city.parse.CateListParse;
+import com.accessories.city.utils.BaseApplication;
 import com.accessories.city.utils.URLConstants;
 import com.accessories.city.view.CustomListView;
 import com.accessories.city.view.GridViewForScrollView;
@@ -107,6 +111,16 @@ public class MsgInfosFragment extends BaseFragment implements RequsetListener {
             }
         });
         setSingle();
+
+        viewForScrollView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(mActivity,NewsActivity.class);
+                intent.putExtra("cityId", BaseApplication.getInstance().location[1]);
+                intent.putExtra("cateId",list.get(position).getId());
+                startActivity(intent);
+            }
+        });
     }
 
     private void setSingle(){

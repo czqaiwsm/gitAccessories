@@ -35,7 +35,7 @@
     <string name="pcenter_forget_pass">忘记密码</string>
     <string name="submit_accertify_title">提示</string>
     <string name="submit_accertify_info">您的信息已提交审核,审核结果会以短信方式通知,请您耐心等待!</string>
-    <string name="integeral">￥%1$s积分</string>
+    <string name="integeral">%1$s积分</string>
 
     <!-- Refresh -->
     <string name="p2refresh_head_load_more">加载更多</string>

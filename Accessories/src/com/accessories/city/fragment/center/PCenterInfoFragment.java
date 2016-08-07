@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -15,7 +16,9 @@ import com.accessories.city.R;
 import com.accessories.city.activity.TeacherMainActivity;
 import com.accessories.city.activity.center.FeedBackActivity;
 import com.accessories.city.activity.center.PCenterInfoUserActivity;
+import com.accessories.city.activity.center.ServiceProtocolActivity;
 import com.accessories.city.activity.center.SettingActivity;
+import com.accessories.city.activity.login.SellerLoginActivity;
 import com.accessories.city.activity.teacher.MyAssetActivity;
 import com.accessories.city.bean.UserInfo;
 import com.accessories.city.fragment.BaseFragment;
@@ -145,9 +148,11 @@ public class PCenterInfoFragment extends BaseFragment implements OnClickListener
     }
 
     private void setData(UserInfo userInfo) {
-        account_customname.setText("18456593221");
+        account_customname.setText("0791-85232660");
         if(userInfo != null){
-            account_ordername.setText(getString(R.string.integeral, userInfo.getIntegral()));
+
+            String money = "<span>"+getString(R.string.integeral, userInfo.getIntegral())+"<font color='#0099FF'>(￥"+userInfo.getMoney()+")</font></span>";
+            account_ordername.setText(Html.fromHtml(money));
 //            ImageLoader.getInstance().displayImage(userInfo.getHeadImg(), mHeadImg, ImageLoaderUtil.mHallIconLoaderOptions);
 //            name.setText(userInfo.getNickName());
 //            phone.setText(userInfo.getMobile());
@@ -165,6 +170,10 @@ public class PCenterInfoFragment extends BaseFragment implements OnClickListener
                 toClassActivity(PCenterInfoFragment.this, PCenterInfoUserActivity.class.getName());
                 break;
             case R.id.wallet_layout:// 关于我们
+                Intent intent1 = new Intent(mActivity, ServiceProtocolActivity.class);
+                intent1.setFlags(12);
+                intent1.putExtra("url","www.baidu.com");
+                mActivity.startActivity(intent1);
 //                toClassActivity(PCenterInfoFragment.this, WalletActivity.class.getName());
                 break;
             case R.id.order_layout:// 积分
@@ -184,7 +193,7 @@ public class PCenterInfoFragment extends BaseFragment implements OnClickListener
                 break;
 
             case R.id.set_layout:// 设置
-                toClassActivity(PCenterInfoFragment.this, SettingActivity.class.getName());
+                toClassActivity(PCenterInfoFragment.this, SellerLoginActivity.class.getName());
                 break;
 
         }
@@ -213,6 +222,7 @@ public class PCenterInfoFragment extends BaseFragment implements OnClickListener
             BaseApplication.saveUserInfo(jsonParserBase.getObj());
             BaseApplication.setMt_token(jsonParserBase.getObj().getId());
             JPushInterface.setAlias(BaseApplication.getInstance(), "t_" + BaseApplication.getUserInfo().getId(), null);
+            setData(mUserInfo);
         }
     }
 

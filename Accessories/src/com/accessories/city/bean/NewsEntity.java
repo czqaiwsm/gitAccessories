@@ -10,6 +10,11 @@ public class NewsEntity {
 
 	private String shopDesc;
 
+	private String time;
+
+	private String phone;
+
+
 	public String getId() {
 		return id;
 	}
@@ -40,5 +45,21 @@ public class NewsEntity {
 
 	public void setShopDesc(String shopDesc) {
 		this.shopDesc = shopDesc;
+	}
+
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 }

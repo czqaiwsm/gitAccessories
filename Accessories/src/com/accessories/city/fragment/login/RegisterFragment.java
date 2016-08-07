@@ -147,7 +147,8 @@ public class RegisterFragment extends BaseFragment implements OnClickListener,Re
 			break;
 		case R.id.protocol://服务协议
 			Intent intent1 = new Intent(mActivity, ServiceProtocolActivity.class);
-			intent1.putExtra("url","http://www.leishangnet.com/learn-wap/html/service_agreement.html");
+			intent1.setFlags(11);
+			intent1.putExtra("url","www.baidu.com");
 			mActivity.startActivity(intent1);
 			break;
 		default:

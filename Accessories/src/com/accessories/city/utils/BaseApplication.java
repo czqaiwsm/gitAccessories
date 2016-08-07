@@ -62,8 +62,8 @@ public class BaseApplication extends Application {
         URLConstants.SCREENW = ScreenUtils.getScreenWidth(this);
         URLConstants.SCREENH = ScreenUtils.getScreenHeight(this);
         locationUitl.startLocation();
-        location[0] = "合肥市";
-        location[1] = "87";
+        location[0] = "南昌市";
+        location[1] = "115";
         diviceId = ((TelephonyManager) this.getSystemService(Context.TELEPHONY_SERVICE )).getDeviceId();
     }
 

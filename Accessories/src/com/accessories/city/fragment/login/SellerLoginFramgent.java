@@ -1,5 +1,6 @@
 package com.accessories.city.fragment.login;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import cn.jpush.android.api.JPushInterface;
 import com.accessories.city.R;
 import com.accessories.city.activity.TeacherMainActivity;
+import com.accessories.city.activity.home.PhoneRecordActivity;
 import com.accessories.city.activity.login.ForgetPassActivity;
 import com.accessories.city.activity.login.RegisterActivity;
 import com.accessories.city.bean.UserInfo;
@@ -33,15 +35,13 @@ import java.util.Map;
  * @creator caozhiqing
  * @data 2016/3/10
  */
-public class LoginFramgent extends BaseFragment implements View.OnClickListener,RequsetListener {
+public class SellerLoginFramgent extends BaseFragment implements View.OnClickListener,RequsetListener {
 
     private EditText login_username;
     private EditText login_pass;
     private TextView forget_pass_text;
     private TextView login_text;
     private TextView register_text;
-
-
 
 
     @Override
@@ -60,7 +60,8 @@ public class LoginFramgent extends BaseFragment implements View.OnClickListener,
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         setLoadingDilog(WaitLayer.DialogType.MODALESS);
-        setTitleText(R.string.login_title);
+        setTitleText("商家登录");
+        setLeftHeadIcon(0);
         initView(view);
     }
     private void initView(View view){
@@ -73,6 +74,10 @@ public class LoginFramgent extends BaseFragment implements View.OnClickListener,
         login_text.setOnClickListener(this);
         register_text.setOnClickListener(this);
         forget_pass_text.setOnClickListener(this);
+
+        forget_pass_text.setVisibility(View.GONE);
+        register_text.setVisibility(View.GONE);
+        login_username.setHint("请输入用户名");
     }
 
     @Override
@@ -113,10 +118,9 @@ public class LoginFramgent extends BaseFragment implements View.OnClickListener,
     @Override
     protected void requestData(int requestType) {
         HttpURL url = new HttpURL();
-        url.setmBaseUrl(URLConstants.LOGIN);
+        url.setmBaseUrl(URLConstants.SHOPLOGIN);
         Map postParams = new HashMap();
-
-        postParams.put("phone", login_username.getText().toString());
+        postParams.put("account", login_username.getText().toString());
         postParams.put("pwd",login_pass.getText().toString());
         RequestParam param = new RequestParam();
 //        param.setmParserClassName(LoginInfoParse.class.getName());
@@ -132,10 +136,9 @@ public class LoginFramgent extends BaseFragment implements View.OnClickListener,
     public void handleRspSuccess(int requestType,Object obj) {
         JsonParserBase<UserInfo> jsonParserBase = (JsonParserBase<UserInfo>)obj;
         if ((jsonParserBase != null)){
-            BaseApplication.saveUserInfo(jsonParserBase.getObj());
-            BaseApplication.setMt_token(jsonParserBase.getObj().getId()); ;
-            toClassActivity(LoginFramgent.this, TeacherMainActivity.class.getName());//老师
-            JPushInterface.setAlias(BaseApplication.getInstance(),"t_"+BaseApplication.getUserInfo().getId(),null);
+            Intent intent = new Intent(mActivity,PhoneRecordActivity.class);
+            intent.putExtra("shopId",jsonParserBase.getObj().getShopId());
+            startActivity(intent);
             mActivity.finish();
         }
     }

@@ -13,7 +13,11 @@ public class UserInfo implements Serializable {
     private String phone;
     private String nickname	    ;//用户头像
     private String account	    ;//昵称
+    private String money	;//兑换钱
     private String integral	;//积分
+
+    private String shopName;
+    private String shopId;
 
     public String getId() {
         return id;
@@ -53,5 +57,29 @@ public class UserInfo implements Serializable {
 
     public void setIntegral(String integral) {
         this.integral = integral;
+    }
+
+    public String getMoney() {
+        return money;
+    }
+
+    public void setMoney(String money) {
+        this.money = money;
+    }
+
+    public String getShopName() {
+        return shopName;
+    }
+
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
+    }
+
+    public String getShopId() {
+        return shopId;
+    }
+
+    public void setShopId(String shopId) {
+        this.shopId = shopId;
     }
 }

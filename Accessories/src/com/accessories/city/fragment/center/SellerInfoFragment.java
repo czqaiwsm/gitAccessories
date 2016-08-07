@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +18,7 @@ import android.widget.TextView;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.accessories.city.R;
+import com.accessories.city.activity.CallPhoneReceiver;
 import com.accessories.city.bean.SellerInfo;
 import com.accessories.city.fragment.BaseFragment;
 import com.accessories.city.help.RequsetListener;
@@ -80,6 +83,14 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
     LinearLayout container;
     private String shopId;
 
+    private Handler mHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            requestData(2);
+        }
+    };
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,6 +112,7 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
         super.onViewCreated(view, savedInstanceState);
         initTitleView();
         initView();
+        CallPhoneReceiver.mHandler = mHandler;
     }
 
     private void initTitleView() {
@@ -138,9 +150,10 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
                 phoneStr = tel2.getText().toString();
                 break;
         }
+
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneStr));
         startActivity(intent);
-        requestData(2);
+//        requestData(2);
     }
 
     /**
