@@ -16,12 +16,12 @@
                       android:layout_height="match_parent"
                       android:orientation="vertical"
                       android:weightSum="2">
-            <RelativeLayout android:id="@+id/guide"
+            <LinearLayout android:id="@+id/guideLL"
                             android:layout_width="match_parent"
                             android:layout_height="@dimen/banner_height"
                             >
                 <include layout="@layout/guide"/>
-            </RelativeLayout>
+            </LinearLayout>
 
             <RadioGroup android:id="@+id/rgTab"
                         android:layout_width="match_parent"

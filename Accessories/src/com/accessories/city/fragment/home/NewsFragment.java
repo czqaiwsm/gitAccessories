@@ -88,7 +88,7 @@ public class NewsFragment extends BaseFragment implements RequsetListener, Custo
         postParams.put("lat", "" + BaseApplication.getInstance().mapLocation.getLatitude());
         postParams.put("lng", "" + BaseApplication.getInstance().mapLocation.getLongitude());
         if (flag == 2) {
-            postParams.put("search", search_edit.getText().toString());//分类ID
+            postParams.put("seach", search_edit.getText().toString());//分类ID
         } else {
             postParams.put("cateId", cateId);//分类ID
         }

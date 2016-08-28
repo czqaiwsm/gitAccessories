@@ -98,8 +98,6 @@ public class SellerLoginFramgent extends BaseFragment implements View.OnClickLis
 //              }
               if(TextUtils.isEmpty(login_username.getText()) || TextUtils.isEmpty(login_pass.getText())){
                   toasetUtil.showInfo( R.string.passname_empty);
-              }else if (!PhoneUitl.isPhone(login_username.getText().toString())){
-                  toasetUtil.showInfo(R.string.phone_error);
               }else {
                 requestTask();
               }

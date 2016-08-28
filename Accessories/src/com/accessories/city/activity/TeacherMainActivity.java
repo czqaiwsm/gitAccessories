@@ -60,7 +60,6 @@ public class TeacherMainActivity extends BaseActivity implements View.OnClickLis
         fragments[3] = pCenterFragment = new PCenterInfoFragment();
 
         initView();
-
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         for(int i=0;i<fragments.length;i++){
             transaction.add(R.id.fragment_container,fragments[i]).hide(fragments[i]);

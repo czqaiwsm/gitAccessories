@@ -32,7 +32,7 @@
 
                 <ImageView android:id="@+id/img"
                             android:layout_width="match_parent"
-                           android:layout_height="160dp"
+                           android:layout_height="180dp"
                            android:background="@drawable/rr"
                            android:scaleType="fitXY"
                         />
@@ -77,6 +77,7 @@
                         android:layout_centerVertical="true"
                         android:textColor="#FFFF6A4A"
                         android:layout_below="@+id/igTv1"
+                        android:lineSpacingExtra="4dp"
                         android:textSize="18sp" />
 
 

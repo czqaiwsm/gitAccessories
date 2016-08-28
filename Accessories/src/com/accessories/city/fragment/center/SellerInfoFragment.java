@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -113,6 +114,16 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
         initTitleView();
         initView();
         CallPhoneReceiver.mHandler = mHandler;
+        img.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                int height = (img.getWidth()*27/39);
+                ViewGroup.LayoutParams layoutParams = img.getLayoutParams();
+                layoutParams.height = height;
+                img.setLayoutParams(layoutParams);
+                return true;
+            }
+        });
     }
 
     private void initTitleView() {
@@ -153,7 +164,7 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
 
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneStr));
         startActivity(intent);
-//        requestData(2);
+        requestData(2);
     }
 
     /**

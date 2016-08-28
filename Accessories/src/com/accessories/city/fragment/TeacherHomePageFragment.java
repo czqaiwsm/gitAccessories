@@ -7,6 +7,7 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.*;
 import com.accessories.city.R;
 import com.accessories.city.activity.ChooseCityActivity;
@@ -25,6 +26,7 @@ import com.accessories.city.utils.DensityUtils;
 import com.accessories.city.utils.URLConstants;
 import com.accessories.city.view.CustomListView;
 import com.accessories.city.view.GridViewForScrollView;
+import com.download.base.utils.ScreenUtils;
 import com.volley.req.net.HttpURL;
 import com.volley.req.net.RequestManager;
 import com.volley.req.net.RequestParam;
@@ -48,6 +50,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
     private View converView;
     private TextView home_header_cityname;
     private FrameLayout search;
+    private LinearLayout guideLL;
     private ViewPager viewpager = null;
     private GuideViewPagerAdapter guideAdapter = null;
     private int ids[] = {R.drawable.aot, R.drawable.aot, R.drawable.aot};
@@ -87,6 +90,18 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         search.setOnClickListener(this);
         home_header_cityname.setOnClickListener(this);
         initView(converView);
+
+
+        guideLL.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                int height = (guideLL.getWidth()*27/39);
+                ViewGroup.LayoutParams layoutParams = guideLL.getLayoutParams();
+                layoutParams.height = height;
+                guideLL.setLayoutParams(layoutParams);
+                return true;
+            }
+        });
         requestTask(1);
     }
 
@@ -95,6 +110,7 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
 //        head_seach_txt = (EditText) view.findViewById(R.id.head_seach_txt);
         viewpager = (ViewPager) view.findViewById(R.id.id_guide_viewpager);
         rgTab = (RadioGroup)view.findViewById(R.id.rgTab);
+        guideLL = (LinearLayout) view.findViewById(R.id.guideLL);
         onInitTabConfig();
         viewForScrollView = (GridViewForScrollView) view.findViewById(R.id.callGridView);
         ArrayAdapter mArrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, new Object[]{});

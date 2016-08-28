@@ -1,6 +1,7 @@
 package com.accessories.city.fragment.home;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -141,8 +142,8 @@ public class CallPhoneRecordFragment extends BaseFragment implements RequsetList
             public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
                                     long arg3) {
                 // TODO Auto-generated method stub
-                Intent intent = new Intent(mActivity, SellerInfoActivity.class);
-                intent.putExtra("shopId", list.get(arg2 - 1).getId());
+
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + list.get(arg2 - 1).getPhone()));
                 startActivity(intent);
             }
         });
