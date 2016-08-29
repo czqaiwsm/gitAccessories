@@ -36,6 +36,7 @@
                   android:ellipsize="end"
                   android:maxLines="3"
                   android:layout_marginRight="@dimen/msg_margin"
+                  android:lineSpacingExtra="3dp"
                   android:textSize="@dimen/msg_time"
                   android:text="大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎大众轮胎"
                 />
