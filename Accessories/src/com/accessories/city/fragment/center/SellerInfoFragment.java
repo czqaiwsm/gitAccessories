@@ -164,7 +164,7 @@ public class SellerInfoFragment extends BaseFragment implements OnClickListener,
 
         Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + phoneStr));
         startActivity(intent);
-        requestData(2);
+//        requestData(2);
     }
 
     /**
