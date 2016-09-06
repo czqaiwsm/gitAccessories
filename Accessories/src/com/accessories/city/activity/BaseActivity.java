@@ -1,17 +1,8 @@
 package com.accessories.city.activity;
 
-import android.app.Service;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
-import android.os.Vibrator;
 import android.support.v4.app.FragmentActivity;
-import android.telephony.TelephonyManager;
-import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
-import com.accessories.city.R;
-import com.accessories.city.activity.teacher.TestThread;
 import com.accessories.city.utils.AppManager;
 import com.toast.ToasetUtil;
 

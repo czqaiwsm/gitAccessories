@@ -43,6 +43,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
+import java.text.ParseException;
 import java.util.UUID;
 
 /**
@@ -138,7 +139,12 @@ public class IDCardCertifyFragment extends BaseFragment implements View.OnClickL
                     toasetUtil.showInfo("请输入姓名");
                     return;
                 }
-                String id = IDCard.IDCardValidate(idCardEdit.getText().toString());
+                String id = null;
+                try {
+                    id = IDCard.IDCardValidate(idCardEdit.getText().toString());
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
                 if (TextUtils.isEmpty(id) || !id.equalsIgnoreCase(idCardEdit.getText().toString())) {
                     toasetUtil.showInfo(id);
                     return;

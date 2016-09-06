@@ -2,9 +2,8 @@ package com.volley.req.net;
 
 import android.net.Uri;
 import android.text.TextUtils;
-import org.apache.http.protocol.HTTP;
 
-import java.io.UnsupportedEncodingException;
+import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -192,13 +191,7 @@ public class HttpURL {
 				}
 			}
 
-			try {
-				return new String(uriBuilder.toString().getBytes(), HTTP.UTF_8);
-			} catch (UnsupportedEncodingException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-			return "";
+			return new String(uriBuilder.toString().getBytes(), Charset.defaultCharset());
 		}
 
 	}

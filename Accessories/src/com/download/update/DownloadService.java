@@ -283,10 +283,16 @@ public class DownloadService extends Service {
             if (showNotify) {
                 int icon = android.R.drawable.stat_sys_download;
                 long when = System.currentTimeMillis();
-                Notification notification = new Notification(icon, "", when);
+                Notification notification = new Notification.Builder(DownloadService.this)
+                        .setContentTitle(getString(R.string.app_name))
+                        .setContentText(str)
+                        .setSmallIcon(icon)
+                        .setContentIntent(contentIntent)
+                        .setWhen(when)
+                        .build();
                 notification.flags = Notification.FLAG_AUTO_CANCEL;
-                notification.setLatestEventInfo(DownloadService.this,
-                        getString(R.string.app_name), str, contentIntent);
+//                notification.setLatestEventInfo(DownloadService.this,
+//                        getString(R.string.app_name), str, contentIntent);
                 mNotificationManager.notify(this.hashCode(), notification);
             }
         }
