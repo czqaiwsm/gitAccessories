@@ -2,21 +2,25 @@ package com.accessories.city.fragment.msg;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.ImageView;
+import android.view.ViewTreeObserver;
+import android.widget.*;
 import com.accessories.city.R;
 import com.accessories.city.activity.home.NewsActivity;
 import com.accessories.city.adapter.ClassTypeAdpter;
+import com.accessories.city.adapter.GuideViewPagerAdapter;
+import com.accessories.city.bean.BannerImgInfo;
 import com.accessories.city.bean.CateListBean;
 import com.accessories.city.bean.CateSubTypeEntity;
 import com.accessories.city.fragment.BaseFragment;
+import com.accessories.city.fragment.TeacherHomePageFragment;
 import com.accessories.city.help.RequsetListener;
 import com.accessories.city.parse.CateListParse;
 import com.accessories.city.utils.BaseApplication;
+import com.accessories.city.utils.DensityUtils;
 import com.accessories.city.utils.URLConstants;
 import com.accessories.city.view.CustomListView;
 import com.accessories.city.view.GridViewForScrollView;
@@ -36,11 +40,16 @@ public class MsgInfosFragment extends BaseFragment implements RequsetListener {
     private GridViewForScrollView viewForScrollView = null;
     private View converView;
     private ImageView banner;
+    private LinearLayout guideLL;
     private List<CateSubTypeEntity> list = null;
     private ClassTypeAdpter adapter;
 
+    private ViewPager viewpager = null;
+    private GuideViewPagerAdapter guideAdapter = null;
+    private ArrayList<BannerImgInfo> bannerImgInfos = new ArrayList<BannerImgInfo>();
+
     private boolean prepare = false;
-    private boolean isVisible = false;
+    private boolean isInit = false;
 
     private int type = 0;//1 汽车配件 2 汽车用品 3 商用车配件 4
 
@@ -75,7 +84,18 @@ public class MsgInfosFragment extends BaseFragment implements RequsetListener {
             setTitleText("商用车配件");
         }
         prepare = true;
+        isInit = true;
 
+        guideLL.getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            @Override
+            public boolean onPreDraw() {
+                int height = (guideLL.getWidth()*27/39);
+                ViewGroup.LayoutParams layoutParams = guideLL.getLayoutParams();
+                layoutParams.height = height;
+                guideLL.setLayoutParams(layoutParams);
+                return true;
+            }
+        });
     }
 
     private void onLoade(){
@@ -83,12 +103,14 @@ public class MsgInfosFragment extends BaseFragment implements RequsetListener {
             requestTask(1);
             prepare = false;
         }
+        if(isInit && isVisible()){
+            initGuidBanner(converView);
+        }
     }
 
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
-        isVisible = !hidden;
         if(hidden){
             dismissLoadingDilog();
         }
@@ -96,6 +118,8 @@ public class MsgInfosFragment extends BaseFragment implements RequsetListener {
     }
 
     private void initView(View view) {
+        viewpager = (ViewPager) view.findViewById(R.id.id_guide_viewpager);
+        guideLL = (LinearLayout) view.findViewById(R.id.guideLL);
         viewForScrollView = (GridViewForScrollView) view.findViewById(R.id.callGridView);
         banner = (ImageView)view.findViewById(R.id.banner);
         ArrayAdapter mArrayAdapter = new ArrayAdapter(getActivity(), android.R.layout.simple_list_item_1, new Object[]{});
@@ -129,11 +153,32 @@ public class MsgInfosFragment extends BaseFragment implements RequsetListener {
         viewForScrollView.setAdapter(adapter);
 
     }
+    /**
+     * 初始化轮播图
+     */
+    private void initGuidBanner(View view) {
+        if (view == null) {
+            return;
+        }
+        bannerImgInfos.clear();
+        bannerImgInfos.addAll(TeacherHomePageFragment.bannerImgInfos);
+        guideAdapter = new GuideViewPagerAdapter(bannerImgInfos, view, mActivity,true);
+        guideAdapter.setDotAlignBottom((int) DensityUtils.px2dp(mActivity, 10f));
+        if(isInit){
+            guideAdapter.setAutoPlay(viewpager, true);
+        }
+        viewpager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
+            @Override
+            public void onPageSelected(int position) {
+                guideAdapter.moveCursorTo(position);// 点的移动
+            }
+        });
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putString("WORKAROUND_FOR_BUG_19917_KEY", "WORKAROUND_FOR_BUG_19917_VALUE");
-        super.onSaveInstanceState(outState);
+        viewpager.setAdapter(guideAdapter);
+        if (bannerImgInfos != null && bannerImgInfos.size() > 1) {
+            viewpager.setCurrentItem(bannerImgInfos.size() * 30);
+        }
+        isInit = false;
     }
 
     @Override

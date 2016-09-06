@@ -15,15 +15,13 @@
                       android:layout_height="match_parent"
                       android:orientation="vertical"
                       >
-            <RelativeLayout android:id="@+id/guide"
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/banner_height"
-                    >
-                <ImageView android:layout_width="match_parent"
-                           android:layout_height="match_parent"
-                            android:background="@drawable/rr"
-                           android:id="@+id/banner"/>
-            </RelativeLayout>
+
+            <LinearLayout android:id="@+id/guideLL"
+                          android:layout_width="match_parent"
+                          android:layout_height="@dimen/banner_height"
+            >
+                <include layout="@layout/guide"/>
+            </LinearLayout>
 
             <LinearLayout android:layout_width="match_parent"
                           android:layout_height="match_parent"
