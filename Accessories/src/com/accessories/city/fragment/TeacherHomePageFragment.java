@@ -54,12 +54,11 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
     private ViewPager viewpager = null;
     private GuideViewPagerAdapter guideAdapter = null;
     private int ids[] = {R.drawable.aot, R.drawable.aot, R.drawable.aot};
-    private ArrayList<BannerImgInfo> bannerImgInfos = new ArrayList<BannerImgInfo>();
+    public static ArrayList<BannerImgInfo> bannerImgInfos = new ArrayList<BannerImgInfo>();
     private GridViewForScrollView viewForScrollView = null;
     private ClassTypeAdpter adapter;
     RadioGroup rgTab;
     List<CateSubTypeEntity> list = new ArrayList<CateSubTypeEntity>();
-    ;
 
     private String cityId;
     private String cityName;
@@ -193,22 +192,10 @@ public class TeacherHomePageFragment extends BaseFragment implements View.OnClic
         if(!guideAdapter.isAutoPlay){
             guideAdapter.setAutoPlay(viewpager, true);
         }
-        viewpager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewpager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener(){
             @Override
             public void onPageSelected(int position) {
-//                int pos = position % ids.length;
                 guideAdapter.moveCursorTo(position);// 点的移动
-            }
-
-            @Override
-            public void onPageScrolled(int position, float positionOffset,
-                                       int positionOffsetPixels) {
-
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
             }
         });
 
