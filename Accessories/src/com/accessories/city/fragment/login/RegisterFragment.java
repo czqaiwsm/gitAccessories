@@ -24,10 +24,7 @@ import com.accessories.city.help.RequestHelp;
 import com.accessories.city.help.RequsetListener;
 import com.accessories.city.parse.BaseParse;
 import com.accessories.city.parse.VerifyCodeParse;
-import com.accessories.city.utils.PhoneUitl;
-import com.accessories.city.utils.SmartToast;
-import com.accessories.city.utils.URLConstants;
-import com.accessories.city.utils.WaitLayer;
+import com.accessories.city.utils.*;
 import com.volley.req.net.HttpURL;
 import com.volley.req.net.RequestManager;
 import com.volley.req.net.RequestParam;
@@ -231,8 +228,12 @@ public class RegisterFragment extends BaseFragment implements OnClickListener,Re
 
 				url.setmBaseUrl(URLConstants.REGIST);
 //				postParams.put("code",inputCode.getText().toString());
+				
 				postParams.put("phone",register_phone.getText().toString());
 				postParams.put("pwd",register_pass.getText().toString());
+				postParams.put("city", BaseApplication.getInstance().mapLocation != null?
+						(TextUtils.isEmpty(BaseApplication.getInstance().mapLocation.getCity())?BaseApplication.getInstance().location[0]:BaseApplication.getInstance().mapLocation.getCity())
+						:BaseApplication.getInstance().location[0]);
 				param.setmParserClassName(BaseParse.class.getName());
 				break;
 		}
